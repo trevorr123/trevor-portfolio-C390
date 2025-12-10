@@ -1,0 +1,795 @@
+/* =========================
+   Base + Variables
+========================= */
+
+:root {
+  --bg: #020617;              /* dark background */
+  --bg-alt: #030712;
+  --card: #ffffff;            /* white cards */
+  --text-main: #0f172a;       /* dark text on cards */
+  --text-muted: #6b7280;
+  --page-text: #e5e7eb;       /* light text on dark bg */
+
+  --accent: #3b82f6;          /* blue accent */
+  --accent-dark: #2563eb;
+
+  --radius-card: 18px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 18px 40px rgba(15, 23, 42, 0.45);
+
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: radial-gradient(circle at top, #020617 0, #020617 55%, #000 100%);
+  color: var(--page-text);
+}
+
+/* =========================
+   TOP HEADER
+========================= */
+
+.main-header {
+  width: 100%;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(12px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-name {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.header-nav a {
+  margin-left: 1.5rem;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.header-nav a:hover {
+  color: var(--accent);
+}
+
+
+/* =========================
+   Global Section Layout
+========================= */
+
+.section {
+  padding: 4rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 2.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #e5e7eb;
+}
+
+/* White card base */
+
+.white-card {
+  background: var(--card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 1.75rem 2rem;
+  color: var(--text-main);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+/* =========================
+   HERO
+========================= */
+
+/* HERO WITH IMAGE */
+/* IMAGE ABOVE HERO CARD */
+.hero-image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -80px; /* pulls card upward under image */
+  z-index: 10;
+  position: relative;
+}
+
+.hero-image-outside {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  border: 4px solid #ffffff;
+}
+
+/* HERO CARD SPACING UPDATED */
+.hero-card {
+  padding: 5rem 3rem 3rem; /* extra top padding because image overlaps */
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile adjustment */
+@media (max-width: 900px) {
+  .hero-image-wrapper {
+    margin-bottom: -60px;
+  }
+  .hero-image-outside {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.hero-section {
+  padding-top: 140px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem 3rem;
+}
+
+.hero-card {
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+  background: var(--card);
+  border-radius: 24px;
+  padding: 2.5rem 2.4rem 2.3rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.hero-card h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #0f172a, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.18em;
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+}
+
+
+.subtitle {
+  margin: 0 0 1.2rem;
+  font-size: 0.98rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.intro {
+  margin: 0 0 1.8rem;
+  font-size: 0.98rem;
+  color: var(--text-main);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+/* Buttons */
+
+.btn-primary,
+.btn-secondary,
+.btn-view {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #f9fafb;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.45);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 38px rgba(37, 99, 235, 0.6);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--text-main);
+  border-color: rgba(15, 23, 42, 0.1);
+}
+
+.btn-secondary:hover {
+  background: #f3f4f6;
+}
+
+.btn-view {
+  margin-top: 0.5rem;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.btn-view:hover {
+  background: #020617;
+}
+
+/* =========================
+   ABOUT SECTION – CLEAN LAYOUT
+========================= */
+
+
+.about-section .section-title {
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   ABOUT SECTION – CLEAN 3-COLUMN
+========================= */
+
+/* =========================
+   ABOUT SECTION – FINAL FIX
+========================= */
+
+.about-section .section-title {
+  margin-bottom: 2rem;
+}
+
+/* White card containing everything */
+.about-wrapper {
+  max-width: 1200px;        /* you can change to 1300px if you want wider */
+  margin: 0 auto;
+  padding: 2.4rem 2.6rem;
+  box-sizing: border-box;
+
+  display: flex;
+  gap: 2.4rem;
+  align-items: flex-start;
+}
+
+/* -------- LEFT: PHOTO -------- */
+
+.about-photo {
+  flex: 0 0 230px;          /* fixed width column */
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo img {
+  width: 210px;
+  height: 295px;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.45);
+  display: block;
+}
+
+/* -------- MIDDLE: TEXT -------- */
+
+.about-text {
+  flex: 1 1 0;              /* flexible column */
+  min-width: 0;
+}
+
+.about-text p {
+  margin: 0 0 1rem;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+/* -------- RIGHT: SKILLS -------- */
+
+.about-skills {
+  flex: 0 0 320px;          /* fixed-ish column that can shrink */
+  min-width: 0;
+}
+
+.about-skills h3 {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* inner skills layout: FLEX, not grid, so it wraps nicely */
+.skills-columns {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;          /* if not enough space, drops to 2 rows instead of overflowing */
+}
+
+.skills-column {
+  flex: 1 1 90px;           /* each column grows but can shrink */
+  min-width: 0;
+}
+
+.skills-column h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  word-break: break-word;
+}
+
+.skills-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-column li {
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  color: var(--text-main);
+}
+
+.skills-column li:last-child {
+  border-bottom: none;
+}
+
+/* -------- RESPONSIVE -------- */
+
+@media (max-width: 1000px) {
+  .about-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+
+  .about-photo {
+    justify-content: center;
+  }
+
+  .about-photo img {
+    margin-bottom: 1rem;
+  }
+
+  .about-skills {
+    width: 100%;
+  }
+
+  .skills-columns {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-wrapper {
+    padding: 2rem 1.6rem;
+  }
+
+  .skills-columns {
+    flex-direction: column;
+  }
+}
+ 
+
+/* =========================
+   EXPERIENCE & EDUCATION
+========================= */
+
+.exp-section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+}
+
+.exp-heading {
+  margin: 0 0 1.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e5e7eb;
+  text-align: center;
+}
+
+/* Each column timeline */
+
+.exp-col {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+/* vertical line */
+
+.exp-col::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 0.3rem;
+  bottom: 0;
+  width: 2px;
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* Item */
+
+.exp-item {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.exp-icon {
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background: #f97316; /* default orange, overridden below */
+  color: #111827;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Different colours for job vs education if you want */
+.exp-icon-job {
+  background: #facc15; /* yellow */
+}
+
+.exp-icon-edu {
+  background: #3b82f6; /* blue */
+  color: #f9fafb;
+}
+
+.exp-content h4 {
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+  color: #f9fafb;
+}
+
+.exp-date {
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.exp-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+/* Responsive: stack columns */
+
+@media (max-width: 900px) {
+  .exp-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .exp-col {
+    padding-left: 1.2rem;
+  }
+
+  .exp-col::before {
+    left: 14px;
+  }
+
+  .exp-item {
+    padding-left: 2.3rem;
+  }
+
+  .exp-icon {
+    left: -2px;
+  }
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.project-card h3 {
+  margin: 0.9rem 0 0.4rem;
+  font-size: 1.15rem;
+}
+
+.project-card p {
+  margin: 0 0 0.8rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Project thumbnail image box */
+
+.project-thumb {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  object-fit: cover;
+  max-height: 180px;
+  background: #e5e7eb; /* fallback background if no image yet */
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 2rem;
+  color: #e5e7eb;
+}
+
+.contact-title span {
+  color: var(--accent); /* blue accent */
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.2fr);
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+/* LEFT SIDE */
+
+.contact-left h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-intro {
+  margin: 0 0 1.4rem;
+  font-size: 0.96rem;
+  color: var(--text-main);
+}
+
+.contact-detail {
+  margin-bottom: 1rem;
+}
+
+.contact-detail h4 {
+  margin: 0 0 0.2rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
+
+.contact-detail p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.contact-detail a {
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.contact-detail a:hover {
+  color: var(--accent-dark);
+}
+
+/* social links */
+
+.contact-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+
+.contact-socials a {
+  font-size: 0.86rem;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  color: var(--accent-dark);
+  background: #f9fafb;
+}
+
+.contact-socials a:hover {
+  border-color: var(--accent);
+}
+
+/* RIGHT SIDE – FORM */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.88rem;
+  color: var(--text-main);
+}
+
+.form-group label {
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  padding: 0.7rem 1rem;
+  font: inherit;
+  background: #111827;
+  color: #e5e7eb;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+/* textarea needs less rounded corners so it looks better */
+
+.contact-form textarea {
+  border-radius: 18px;
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #6b7280;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.6);
+  background: #020617;
+}
+
+/* Submit button already uses .btn-primary styles */
+.contact-submit {
+  align-self: flex-start;
+  margin-top: 0.2rem;
+}
+
+.form-note {
+  margin: 0.4rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .contact-wrapper {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .form-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 1.5rem 1.5rem 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* =========================
+   Links on dark background
+========================= */
+
+a {
+  color: var(--accent);
+}
+
+/* override inside white cards where we want darker accent */
+.white-card a {
+  color: var(--accent-dark);
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px) {
+  .hero-card {
+    padding: 2.2rem 1.6rem 2rem;
+  }
+
+  .hero-card h1 {
+    font-size: 2rem;
+  }
+
+  .two-col {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .section {
+    padding-inline: 1.25rem;
+  }
+}
+
