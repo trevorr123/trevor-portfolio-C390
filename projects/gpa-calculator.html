@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GPA Calculator | Trevor Pan</title>
+
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body class="project-page">
+
+  <!-- Top nav (simple + consistent) -->
+  <header class="project-topbar">
+    <a class="back-link" href="../index.html#portfolio">← Back to Portfolio</a>
+    <span class="project-breadcrumb">Project Details</span>
+  </header>
+
+  <main class="project-shell">
+    <section class="project-card">
+      <div class="project-header">
+        <p class="project-kicker">PROJECT</p>
+        <h1 class="project-title">GPA Calculator</h1>
+        <p class="project-subtitle">Mobile App Development</p>
+      </div>
+
+      <div class="project-grid">
+        <!-- Left column: meta -->
+        <aside class="project-meta">
+          <div class="meta-block">
+            <p class="meta-label">CATEGORY</p>
+            <p class="meta-value">Mobile App Development</p>
+          </div>
+
+          <div class="meta-block">
+            <p class="meta-label">YEAR</p>
+            <p class="meta-value">2025</p>
+          </div>
+
+          <div class="meta-block">
+            <p class="meta-label">CLIENT</p>
+            <p class="meta-value">Republic Polytechnic</p>
+          </div>
+
+        </aside>
+
+        <!-- Right column: description -->
+        <div class="project-content">
+          <h2 class="section-title">Overview</h2>
+          <p class="section-text">
+            GPA Calculator app using React Native (Expo) with stack navigation and local data persistence
+          </p>
+
+          <h2 class="section-title">What I Did</h2>
+          <ul class="bullet-list">
+            <li>Designed and developed a GPA Calculator mobile app using React Native (Expo).</li>
+            <li>Implemented multi-screen navigation (Home, Add, Edit, Summary) using React Navigation (Native Stack).</li>
+            <li>Built full basic CRUD function</li>
+            <li>Used AsyncStorage to persist module data locally so it remains after the app is closed</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Gallery -->
+      <div class="project-gallery">
+        <h2 class="section-title">Screenshots</h2>
+
+        <div class="shots-grid">
+          <figure class="shot">
+            <img src="../images/gpa-calculator.png" alt="Homepage" />
+            <figcaption>Home</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <img src="../images/gpa-calculator1.png" alt="Add Module Page" />
+            <figcaption>Add Module</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <img src="../images/gpa-calculator2.png" alt="Summary Page" />
+            <figcaption>Summary</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <img src="../images/gpa-calculator3.png" alt="Edit Page" />
+            <figcaption>Edit</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="project-footer">
+    <p>© <span id="year"></span> Trevor Pan • Portfolio</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  
+
+</body>
+</html>

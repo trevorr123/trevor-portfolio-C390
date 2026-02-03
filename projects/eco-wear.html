@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoWear | Trevor Pan</title>
+
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body class="project-page">
+
+  <!-- Top nav (simple + consistent) -->
+  <header class="project-topbar">
+    <a class="back-link" href="../index.html#portfolio">← Back to Portfolio</a>
+    <span class="project-breadcrumb">Project Details</span>
+  </header>
+
+  <main class="project-shell">
+    <section class="project-card">
+      <div class="project-header">
+        <p class="project-kicker">PROJECT</p>
+        <h1 class="project-title">EcoWear</h1>
+        <p class="project-subtitle">UI/UX Design • Figma UI Kit</p>
+      </div>
+
+      <div class="project-grid">
+        <!-- Left column: meta -->
+        <aside class="project-meta">
+          <div class="meta-block">
+            <p class="meta-label">CATEGORY</p>
+            <p class="meta-value">UI/UX Design</p>
+          </div>
+
+          <div class="meta-block">
+            <p class="meta-label">YEAR</p>
+            <p class="meta-value">2025</p>
+          </div>
+
+          <div class="meta-block">
+            <p class="meta-label">CLIENT</p>
+            <p class="meta-value">Republic Polytechnic</p>
+          </div>
+
+          <div class="meta-block">
+            <p class="meta-label">LINKS</p>
+            <div class="meta-links">
+              <a class="pill-btn" href="https://www.figma.com/design/uWGY0ZUvZzQCWddMcvvTgg/C218-CA1-EcoWear-Wireframe?node-id=0-1&t=MyHU6jR9ILN5msQJ-1" target="_blank" rel="noopener">Figma</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right column: description -->
+        <div class="project-content">
+          <h2 class="section-title">Overview</h2>
+          <p class="section-text">
+            EcoWear is a UI kit created in Figma focusing on a clean visual system—typography, colours,
+            buttons, cards, forms, and reusable components. The design aims for a modern, minimal look
+            that supports a smooth shopping experience.
+          </p>
+
+          <h2 class="section-title">What I Did</h2>
+          <ul class="bullet-list">
+            <li>Designed typography scale and colour palette</li>
+            <li>Built core UI components (buttons, cards, inputs, nav)</li>
+            <li>Created form and data elements for consistency</li>
+            <li>Maintained spacing, alignment, and responsive layout planning</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Gallery -->
+      <div class="project-gallery">
+        <h2 class="section-title">Screenshots</h2>
+
+        <div class="shots-grid">
+          <figure class="shot">
+            <img src="../images/ecowear1.png" alt="EcoWear Homepage" />
+            <figcaption>Home</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <img src="../images/ecowear3.png" alt="Category Page" />
+            <figcaption>Category</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <img src="../images/ecowear2.png" alt="EcoWear Product Details Page" />
+            <figcaption>Product Details</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <img src="../images/ecowear4.png" alt="Checkout Overview Page" />
+            <figcaption>Checkout Overview</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="project-footer">
+    <p>© <span id="year"></span> Trevor Pan • Portfolio</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  
+
+</body>
+</html>
