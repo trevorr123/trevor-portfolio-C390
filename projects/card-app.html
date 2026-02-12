@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Card Management App | Trevor Pan</title>
+
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body class="project-page">
+
+  <!-- Top nav (simple + consistent) -->
+  <header class="project-topbar">
+    <a class="back-link" href="../index.html#portfolio">← Back to Portfolio</a>
+    <span class="project-breadcrumb">Project Details</span>
+  </header>
+
+  <main class="project-shell">
+    <section class="project-card">
+      <div class="project-header">
+        <p class="project-kicker">PROJECT</p>
+        <h1 class="project-title">Card Management App</h1>
+        <p class="project-subtitle">Web App Development</p>
+      </div>
+
+      <div class="project-grid">
+        <!-- Left column: meta -->
+        <aside class="project-meta">
+          <div class="meta-block">
+            <p class="meta-label">CATEGORY</p>
+            <p class="meta-value">Web App Development</p>
+          </div>
+
+          <div class="meta-block">
+            <p class="meta-label">YEAR</p>
+            <p class="meta-value">2025</p>
+          </div>
+
+          <div class="meta-block">
+            <p class="meta-label">CLIENT</p>
+            <p class="meta-value">Republic Polytechnic</p>
+          </div>
+
+          <div class="meta-block">
+            <p class="meta-label">LINKS</p>
+            <div class="meta-links">
+              <a class="pill-btn" href="https://card-app-starter-seven.vercel.app" target="_blank" rel="noopener">Visit My App!</a>
+              <a class="pill-btn" href="https://github.com/nicgoh2612/card-app-starter" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right column: description -->
+        <div class="project-content">
+          <h2 class="section-title">Overview</h2>
+          <p class="section-text">
+            This Card App is a full-stack web application that allows users to manage a 
+            collection of cards using basic CRUD functionality. Users can create new cards,
+             view all existing cards in a clean grid layout, update card details, and delete 
+             cards when needed. The frontend provides an interactive interface with Edit 
+             and Delete actions, while the backend handles API requests and communicates with 
+             the database to store and retrieve card data. This project demonstrates my 
+             understanding of full-stack development, including building user interfaces, 
+             implementing RESTful APIs, and connecting the application to a database for 
+             persistent data management.
+          </p>
+
+          <h2 class="section-title">What I Did</h2>
+          <ul class="bullet-list">
+            <li>Designed and built a responsive card-based user interface to display items clearly</li>
+            <li>Implemented full CRUD functionality (Create, Read, Update, Delete)</li>
+            <li>Developed RESTful API routes to handle frontend requests</li>
+            <li>Connected the backend to a database for persistent data storage</li>
+            <li>Integrated frontend and backend to enable dynamic data updates</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Gallery -->
+      <div class="project-gallery">
+        <h2 class="section-title">Screenshots</h2>
+
+        <div class="shots-grid">
+          <figure class="shot">
+            <img src="../images/cardapp1.png" alt="Homepage" />
+            <figcaption>Home</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <img src="../images/cardapp2.png" alt="Category Page" />
+            <figcaption>Cards</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <img src="../images/cardapp3.png" alt="EcoWear Product Details Page" />
+            <figcaption>Add Card</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <img src="../images/cardapp4.png" alt="Checkout Overview Page" />
+            <figcaption>Edit Card</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="project-footer">
+    <p>© <span id="year"></span> Trevor Pan • Portfolio</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  
+
+</body>
+</html>

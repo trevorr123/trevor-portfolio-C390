@@ -990,3 +990,135 @@ footer {
   color: var(--accent-dark);
 }
 
+/* main big card */
+.profile-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+  position: relative;
+  z-index: 5;
+}
+
+/* your layout inside the card */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr 1.4fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* certifications container becomes scrollable */
+.cert-list {
+  max-height: 260px;      /* adjust to what looks best */
+  overflow-y: auto;
+  padding-right: 10px;    /* space so scrollbar doesn’t touch text */
+}
+
+/* each row title + view aligned */
+.cert-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.cert-item a {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.cert-list--more {
+  display: none;
+}
+
+.cert-list--more.is-open {
+  display: block;
+}
+
+.certs-toggle{
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+
+  border-radius: 999px;
+  border: 1px solid #2563eb;   /* your blue accent */
+
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.certs-toggle:hover{
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Click effect */
+.certs-toggle:active{
+  transform: scale(0.96);
+}
+
+/* HEADER POSITION */
+.site-header{
+  position: absolute;
+  top: -20px;
+  left: -40px;
+  z-index: 100;
+}
+
+/* LOGO CONTAINER */
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* LOGO IMAGE */
+.logo img{
+  width: 250px;
+  height: auto;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.contact-socials a {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 2px solid #2563eb;  /* use your accent blue */
+
+  color: #2563eb;
+  font-size: 18px;
+
+  transition: all 0.3s ease;
+}
+
+.contact-socials a:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
+}

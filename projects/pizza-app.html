@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pizza Ordering App | Trevor Pan</title>
+
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body class="project-page">
+
+  <!-- Top nav (simple + consistent) -->
+  <header class="project-topbar">
+    <a class="back-link" href="../index.html#portfolio">← Back to Portfolio</a>
+    <span class="project-breadcrumb">Project Details</span>
+  </header>
+
+  <main class="project-shell">
+    <section class="project-card">
+      <div class="project-header">
+        <p class="project-kicker">PROJECT</p>
+        <h1 class="project-title">Pizza Ordering App</h1>
+        <p class="project-subtitle">Web App Development</p>
+      </div>
+
+      <div class="project-grid">
+        <!-- Left column: meta -->
+        <aside class="project-meta">
+          <div class="meta-block">
+            <p class="meta-label">CATEGORY</p>
+            <p class="meta-value">Web App Development</p>
+          </div>
+
+          <div class="meta-block">
+            <p class="meta-label">YEAR</p>
+            <p class="meta-value">2025</p>
+          </div>
+
+          <div class="meta-block">
+            <p class="meta-label">CLIENT</p>
+            <p class="meta-value">Republic Polytechnic</p>
+          </div>
+
+          <div class="meta-block">
+            <p class="meta-label">LINKS</p>
+            <div class="meta-links">
+              <a class="pill-btn" href="https://pizza-app-mocha-delta.vercel.app" target="_blank" rel="noopener">Visit My App!</a>
+              <a class="pill-btn" href="https://github.com/trevorr123/pizza-app" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right column: description -->
+        <div class="project-content">
+          <h2 class="section-title">Overview</h2>
+          <p class="section-text">
+            Trevor’s Pizza Co. is a responsive web application that showcases a 
+            dynamic pizza menu with images, descriptions, and pricing. Users can 
+            browse available pizzas, search by name or ingredients, and interact
+             with the ordering interface. The app includes conditional rendering 
+             to display store status (open or closed) and adjusts the call-to-action 
+             accordingly. This project demonstrates my ability to build interactive, 
+             data-driven user interfaces, implement real-time search functionality, 
+             and apply conditional logic within a modern web application.
+          </p>
+
+          <h2 class="section-title">What I Did</h2>
+          <ul class="bullet-list">
+            <li>Designed and built a responsive pizza menu using reusable card components</li>
+            <li>Structured menu data and dynamically rendered items from organised data arrays</li>
+            <li>Implemented real-time search functionality to filter pizzas by name or ingredients</li>
+            <li>Applied conditional rendering to display store open/closed status</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Gallery -->
+      <div class="project-gallery">
+        <h2 class="section-title">Screenshots</h2>
+
+        <div class="shots-grid">
+          <figure class="shot">
+            <img src="../images/pizza.png" alt="Homepage" />
+            <figcaption>Home</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="project-footer">
+    <p>© <span id="year"></span> Trevor Pan • Portfolio</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  
+
+</body>
+</html>
